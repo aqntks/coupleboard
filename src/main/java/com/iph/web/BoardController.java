@@ -12,14 +12,13 @@ public class BoardController {
 
     private final MemoriesService memoriesService;
 
-    @GetMapping("/memories/save")
-    public String memoriesSave(){
-        return "memories-save";
+    @GetMapping("/")
+    public String home(Model model) {
+        return "home";
     }
 
     @GetMapping("/plan")
     public String plan(Model model) {
-        model.addAttribute("memories", memoriesService.findAllDesc());
         return "plan";
     }
 
@@ -29,8 +28,13 @@ public class BoardController {
         return "memory";
     }
 
-    @GetMapping("/test")
-    public String test(){
-        return "test";
+    @GetMapping("/add/memory")
+    public String addMemory(){
+        return "add_memory";
+    }
+
+    @GetMapping("/memories/save")
+    public String memoriesSave(){
+        return "memories-save";
     }
 }
