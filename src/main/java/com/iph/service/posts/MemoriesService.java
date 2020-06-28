@@ -25,7 +25,7 @@ public class MemoriesService {
         Memories memories = memoriesRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
 
-        memories.update(requestDto.getDate(), requestDto.getPlace(), requestDto.getContent());
+        memories.update(requestDto.getYear(), requestDto.getMonth(), requestDto.getDate(), requestDto.getPlace(), requestDto.getContent());
 
         return id;
     }

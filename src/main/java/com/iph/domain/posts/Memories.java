@@ -18,6 +18,12 @@ public class Memories extends BaseTimeEntity {
     private Long id;
 
     @Column(columnDefinition = "TEXT", nullable = false)
+    private String year;
+
+    @Column(columnDefinition = "TEXT", nullable = false)
+    private String month;
+
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String date;
 
     @Column(columnDefinition = "TEXT", nullable = false)
@@ -28,14 +34,18 @@ public class Memories extends BaseTimeEntity {
 
 
     @Builder
-    public Memories(String date, String place, String content){
+    public Memories(String year, String month, String date, String place, String content){
+        this.year = year;
+        this.month = month;
         this.date = date;
         this.place = place;
         this.content = content;
 
     }
 
-    public void update(String date, String place, String content){
+    public void update(String year, String month,String date, String place, String content){
+        this.year = year;
+        this.month = month;
         this.date = date;
         this.place = place;
         this.content = content;
