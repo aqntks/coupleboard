@@ -4,8 +4,10 @@ import com.iph.domain.posts.Gallery;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
 @NoArgsConstructor
 public class GallerySaveRequestDto {
     private String title;
