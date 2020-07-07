@@ -12,6 +12,17 @@ public class BoardController {
 
     private final MemoriesService memoriesService;
 
+    @GetMapping("/plantest")
+    public String plantest(Model model) {
+        return "plantest";
+    }
+
+    @GetMapping("/calendars")
+    public String calendars(Model model) {
+        return "calendars";
+    }
+
+
     @GetMapping("/")
     public String home(Model model) {
         return "home";
