@@ -16,7 +16,6 @@ import java.util.stream.Collectors;
 @Service
 public class CoupleProfileService {
     private final CoupleProfileRepository coupleProfileRepository;
-
     @Transactional
     public Long save(CoupleProfileSaveRequestDto requestDto) {
         return coupleProfileRepository.save(requestDto.toEntity()).getId();
@@ -51,5 +50,10 @@ public class CoupleProfileService {
                 .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
 
         return new CoupleProfileResponseDto(entity);
+    }
+
+    @Transactional
+    public boolean existsById (Long id) {
+        return coupleProfileRepository.existsById(id);
     }
 }
