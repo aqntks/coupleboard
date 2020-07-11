@@ -1,5 +1,6 @@
 package com.iph.web;
 
+import com.iph.service.posts.CoupleProfileService;
 import com.iph.service.posts.MemoriesService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class BoardController {
 
     private final MemoriesService memoriesService;
+    private final CoupleProfileService coupleProfileService;
 
     @GetMapping("/calendars")
     public String calendars(Model model) {
@@ -20,6 +22,8 @@ public class BoardController {
 
     @GetMapping("/")
     public String home(Model model) {
+
+        model.addAttribute("couple_profile", coupleProfileService.findById(1L));
         return "home";
     }
 

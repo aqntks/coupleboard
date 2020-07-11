@@ -78,6 +78,7 @@
         <div class="content">
             <div class="row">
                 <!--프로필1 시작-->
+                {{#couple_profile}}
                 <div class="col-md-4">
                     <div class="card card-user">
                         <div class="card-body">
@@ -89,16 +90,16 @@
                                     <div class="block block-four"></div>
                                     <a href="javascript:void(0)">
                                         <img class="avatar" src="/img/emilyz.jpg" alt="...">
-                                        <h5 class="title">Mike Andrew</h5>
+                                        <h5 class="title">{{user1_name}}</h5>
                                     </a>
                             <p class="description">
-                                Ceo/Co-Founder
+                            {{user1_job}}
                             </p>
                         </div>
                         </p>
                     </div>
                     <div class="card-description">
-                        Do not be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                        {{user1_about}}
                     </div>
                     <div class="card-footer">
                         <div class="button-container">
@@ -132,16 +133,16 @@
                                 <div class="block block-four"></div>
                                 <a href="javascript:void(0)">
                                     <img class="avatar" src="/img/emilyz.jpg" alt="...">
-                                    <h5 class="title">Mike Andrew</h5>
+                                    <h5 class="title">{{user2_name}}</h5>
                                 </a>
                         <p class="description">
-                            Ceo/Co-Founder
+                        {{user2_job}}
                         </p>
                     </div>
                     </p>
                 </div>
                 <div class="card-description">
-                    Do not be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                    {{user2_about}}
                 </div>
                 <div class="card-footer">
                     <div class="button-container">
@@ -159,6 +160,7 @@
             </div>
         </div>
         <!--프로필2 끝-->
+                {{/couple_profile}}
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-header">

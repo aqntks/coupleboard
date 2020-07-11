@@ -1,4 +1,7 @@
+/*
+
 package com.iph.web;
+
 
 import com.iph.service.GalleryService;
 import com.iph.service.S3Service;
@@ -6,6 +9,7 @@ import com.iph.web.dto.GallerySaveRequestDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -32,3 +36,5 @@ public class GalleryController {
         return "redirect:gallery";
     }
 }
+
+ */
