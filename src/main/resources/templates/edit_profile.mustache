@@ -1,0 +1,263 @@
+{{>layout/header}}
+<div class="wrapper">
+    <div class="sidebar">
+        <!--
+          Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
+      -->
+        <div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="javascript:void(0)" class="simple-text logo-mini">
+                    IPH
+                </a>
+                <a href="/" class="simple-text logo-normal">
+                    HOME
+                </a>
+            </div>
+            <ul class="nav">
+                <li>
+                    <a href="plan">
+                        <i class="tim-icons icon-chart-pie-36"></i>
+                        <p>계획보드</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="memory">
+                        <i class="tim-icons icon-badge"></i>
+                        <p>추억보드</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./map.html">
+                        <i class="tim-icons icon-pin"></i>
+                        <p>Maps</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./notifications.html">
+                        <i class="tim-icons icon-bell-55"></i>
+                        <p>Notifications</p>
+                    </a>
+                </li>
+                <li class="active ">
+                    <a href="../edit_profile">
+                        <i class="tim-icons icon-single-02"></i>
+                        <p>프로필 관리</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./tables.html">
+                        <i class="tim-icons icon-puzzle-10"></i>
+                        <p>Table List</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./typography.html">
+                        <i class="tim-icons icon-align-center"></i>
+                        <p>Typography</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="./rtl.html">
+                        <i class="tim-icons icon-world"></i>
+                        <p>RTL Support</p>
+                    </a>
+                </li>
+                <li class="active-pro">
+                    <a href="./upgrade.html">
+                        <i class="tim-icons icon-spaceship"></i>
+                        <p>Upgrade to PRO</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-panel">
+
+        {{>layout/navbar}}
+
+        <div class="content">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="title">프로필1</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6 pr-md-1">
+                                        <div class="form-group">
+                                            <label>이름</label>
+                                            <input type="text" class="form-control" placeholder="이름" id="user1_name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 pl-md-1">
+                                        <div class="form-group">
+                                            <label>직업&소속</label>
+                                            <input type="text" class="form-control" placeholder="직업&소속" id="user1_job">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 pr-md-1">
+                                        <div class="form-group">
+                                            <label>생일</label>
+                                            <input type="text" class="form-control" placeholder="년" id="user1_year">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 pl-md-1">
+                                        <div class="form-group">
+                                            <label></label>
+                                            <input type="text" class="form-control" placeholder="월" id="user1_month">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 pl-md-1">
+                                        <div class="form-group">
+                                            <label></label>
+                                            <input type="text" class="form-control" placeholder="일" id="user1_date">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>주소</label>
+                                            <input type="text" class="form-control" placeholder="주소" id="user1_address">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>인스타그램</label>
+                                            <input type="text" class="form-control" placeholder="인스타그램 아이디" id="user1_instargram">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>페이스북</label>
+                                            <input type="text" class="form-control" placeholder="페이스북 아이디" id="user1_facebook">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">이메일</label>
+                                            <input type="email" class="form-control" placeholder="user@email.com" id="user1_email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>소개</label>
+                                            <textarea rows="4" cols="80" class="form-control" placeholder="자신의 소개" id="user1_about"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-fill btn-primary">저장</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="title">프로필2</h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6 pr-md-1">
+                                        <div class="form-group">
+                                            <label>이름</label>
+                                            <input type="text" class="form-control" placeholder="이름" id="user2_name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 pl-md-1">
+                                        <div class="form-group">
+                                            <label>직업&소속</label>
+                                            <input type="text" class="form-control" placeholder="직업&소속" id="user2_job">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 pr-md-1">
+                                        <div class="form-group">
+                                            <label>생일</label>
+                                            <input type="text" class="form-control" placeholder="년" id="user2_year">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 pl-md-1">
+                                        <div class="form-group">
+                                            <label></label>
+                                            <input type="text" class="form-control" placeholder="월" id="user2_month">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 pl-md-1">
+                                        <div class="form-group">
+                                            <label></label>
+                                            <input type="text" class="form-control" placeholder="일" id="user2_date">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>주소</label>
+                                            <input type="text" class="form-control" placeholder="주소" id="user2_address">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>인스타그램</label>
+                                            <input type="text" class="form-control" placeholder="인스타그램 아이디" id="user2_instargram">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>페이스북</label>
+                                            <input type="text" class="form-control" placeholder="페이스북 아이디" id="user2_facebook">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">이메일</label>
+                                            <input type="email" class="form-control" placeholder="user@email.com" id="user2_email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>소개</label>
+                                            <textarea rows="4" cols="80" class="form-control" placeholder="자신의 소개" id="user2_about"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-fill btn-primary">저장</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{>layout/footnav}}
+</div>
+</div>
+{{>layout/dropdown}}
+{{>layout/footer}}

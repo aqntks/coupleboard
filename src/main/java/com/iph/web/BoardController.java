@@ -12,11 +12,6 @@ public class BoardController {
 
     private final MemoriesService memoriesService;
 
-    @GetMapping("/plantest")
-    public String plantest(Model model) {
-        return "plantest";
-    }
-
     @GetMapping("/calendars")
     public String calendars(Model model) {
         return "calendars";
@@ -47,5 +42,10 @@ public class BoardController {
     @GetMapping("/memories/save")
     public String memoriesSave(){
         return "memories-save";
+    }
+
+    @GetMapping("/edit_profile")
+    public String edit_profile(Model model) {
+        return "edit_profile";
     }
 }
