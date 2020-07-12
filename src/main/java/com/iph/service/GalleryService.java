@@ -1,4 +1,4 @@
-
+/*
 package com.iph.service;
 
 import com.iph.domain.posts.Gallery;
@@ -54,3 +54,4 @@ public class GalleryService {
                 .collect(Collectors.toList());
     }
 }
+*/

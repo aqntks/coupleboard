@@ -1,4 +1,4 @@
-
+/*
 package com.iph.service;
 
 import com.amazonaws.auth.AWSCredentials;
@@ -51,3 +51,5 @@ public class S3Service {
         return s3Client.getUrl(bucket, fileName).toString();
     }
 }
+
+ */
