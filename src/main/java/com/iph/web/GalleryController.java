@@ -1,4 +1,3 @@
-/*
 
 package com.iph.web;
 
@@ -36,5 +35,3 @@ public class GalleryController {
         return "redirect:gallery";
     }
 }
-
- */

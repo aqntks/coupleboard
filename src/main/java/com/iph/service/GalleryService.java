@@ -1,4 +1,3 @@
-/*
 
 package com.iph.service;
 
@@ -55,5 +54,3 @@ public class GalleryService {
                 .collect(Collectors.toList());
     }
 }
-
-*/
