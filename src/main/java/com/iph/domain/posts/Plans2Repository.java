@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface Plans2Repository extends JpaRepository<Plans2, Long>{
 
-    @Query("SELECT p FROM plans2 p ORDER BY p.id DESC")
+    @Query("SELECT p FROM Plans2 p ORDER BY p.id DESC")
     List<Plans2> findAllDesc();
 
     @Query(value = "SELECT * FROM plans2 p WHERE p.year = DATE_FORMAT(curdate() , '%Y') " +
