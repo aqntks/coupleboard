@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Plans extends BaseTimeEntity {
+public class Plans2 extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,7 +34,7 @@ public class Plans extends BaseTimeEntity {
 
 
     @Builder
-    public Plans(String year, String month, String date, String place, String content){
+    public Plans2(String year, String month, String date, String place, String content){
         this.year = year;
         this.month = month;
         this.date = date;

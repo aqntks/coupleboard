@@ -1,12 +1,11 @@
 package com.iph.web.dto;
 
-import com.iph.domain.posts.Memories;
-import com.iph.domain.posts.Plans;
+import com.iph.domain.posts.Plans2;
 import lombok.Getter;
 import java.time.LocalDateTime;
 
 @Getter
-public class PlansListResponseDto {
+public class Plans2ListResponseDto {
     private Long id;
     private String year;
     private String month;
@@ -15,7 +14,7 @@ public class PlansListResponseDto {
     private String content;
     private LocalDateTime modifiedDate;
 
-    public PlansListResponseDto(Plans entity) {
+    public Plans2ListResponseDto(Plans2 entity) {
         this.id = entity.getId();
         this.year = entity.getYear();
         this.month = entity.getMonth();

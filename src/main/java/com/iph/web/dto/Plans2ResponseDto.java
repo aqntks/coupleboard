@@ -1,11 +1,10 @@
 package com.iph.web.dto;
 
-import com.iph.domain.posts.Memories;
-import com.iph.domain.posts.Plans;
+import com.iph.domain.posts.Plans2;
 import lombok.Getter;
 
 @Getter
-public class PlansResponseDto {
+public class Plans2ResponseDto {
 
     private Long id;
     private String year;
@@ -14,7 +13,7 @@ public class PlansResponseDto {
     private String place;
     private String content;
 
-    public PlansResponseDto(Plans entity){
+    public Plans2ResponseDto(Plans2 entity){
         this.id = entity.getId();
         this.year = entity.getYear();
         this.month = entity.getMonth();

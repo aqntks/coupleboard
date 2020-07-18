@@ -43,6 +43,7 @@ public class BoardController {
 
     @GetMapping("/plan")
     public String plan(Model model) {
+        model.addAttribute("couple_profile", coupleProfileService.findById(1L));
         return "plan";
     }
 
