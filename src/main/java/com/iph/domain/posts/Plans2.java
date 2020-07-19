@@ -32,7 +32,6 @@ public class Plans2 extends BaseTimeEntity {
     @Column
     private String content;
 
-
     @Builder
     public Plans2(String year, String month, String date, String place, String content){
         this.year = year;
@@ -40,7 +39,6 @@ public class Plans2 extends BaseTimeEntity {
         this.date = date;
         this.place = place;
         this.content = content;
-
     }
 
     public void update(String year, String month,String date, String place, String content){
