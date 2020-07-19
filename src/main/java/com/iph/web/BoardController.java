@@ -3,6 +3,7 @@ package com.iph.web;
 import com.iph.domain.posts.CoupleProfile;
 import com.iph.service.posts.CoupleProfileService;
 import com.iph.service.posts.MemoriesService;
+import com.iph.service.posts.Plans2Service;
 import com.iph.web.dto.CoupleProfileResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ public class BoardController {
 
     private final MemoriesService memoriesService;
     private final CoupleProfileService coupleProfileService;
+    private final Plans2Service plans2Service;
 
     @GetMapping("/calendars")
     public String calendars(Model model) {
@@ -24,8 +26,7 @@ public class BoardController {
 
     @GetMapping("/")
     public String home(Model model) {
-        //프로필 등록 되기 전에 홈화면 에러 안뜨게 코드 작성해야해 if id(1) 이 없으면 아래가 아니라 다른화면!
-        if(coupleProfileService.existsById(1L)) {
+        if(coupleProfileService.existsById(1L)) {  // 프로필 존재 여부
             model.addAttribute("couple_profile", coupleProfileService.findById(1L));
         }
         else {
@@ -38,12 +39,15 @@ public class BoardController {
             entity.setUser2_about("");
             model.addAttribute("couple_profile", entity);
         }
+
+        model.addAttribute("plans2", plans2Service.findTodayPlan());
+
         return "home";
     }
 
     @GetMapping("/plan")
     public String plan(Model model) {
-        model.addAttribute("couple_profile", coupleProfileService.findById(1L));
+        model.addAttribute("plans2", plans2Service.findTodayPlan());
         return "plan";
     }
 
