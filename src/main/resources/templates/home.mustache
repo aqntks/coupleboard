@@ -169,11 +169,11 @@
                             <h4 class="card-title">오늘 일정</h4>
                         </div>
                         <div class="card-body">
-                            {{#plans2}}
+                            {{#today}}
                                 <div class="alert alert-info">
                                     <span>{{content}} - {{place}}</span>
                                 </div>
-                            {{/plans2}}
+                            {{/today}}
                         </div>
                     </div>
                 </div>
@@ -183,36 +183,14 @@
                             <h4 class="card-title">다가오는 일정</h4>
                         </div>
                         <div class="card-body">
-                            <div class="alert alert-primary">
-                                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                                    <i class="tim-icons icon-simple-remove"></i>
-                                </button>
-                                <span><b> Primary - </b> This is a regular notification made with ".alert-primary"</span>
-                            </div>
-                            <div class="alert alert-info">
-                                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                                    <i class="tim-icons icon-simple-remove"></i>
-                                </button>
-                                <span><b> Info - </b> This is a regular notification made with ".alert-info"</span>
-                            </div>
-                            <div class="alert alert-success">
-                                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                                    <i class="tim-icons icon-simple-remove"></i>
-                                </button>
-                                <span><b> Success - </b> This is a regular notification made with ".alert-success"</span>
-                            </div>
-                            <div class="alert alert-warning">
-                                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                                    <i class="tim-icons icon-simple-remove"></i>
-                                </button>
-                                <span><b> Warning - </b> This is a regular notification made with ".alert-warning"</span>
-                            </div>
-                            <div class="alert alert-danger">
-                                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                                    <i class="tim-icons icon-simple-remove"></i>
-                                </button>
-                                <span><b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
-                            </div>
+                            {{#next}}
+                                <div class="alert alert-primary">
+                                    <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                                        <i class="tim-icons icon-simple-remove"></i>
+                                    </button>
+                                    <span><b> ({{month}}/{{date}}) </b> {{place}} - {{content}}</span>
+                                </div>
+                            {{/next}}
                         </div>
                     </div>
                 </div>

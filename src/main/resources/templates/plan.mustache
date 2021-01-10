@@ -164,11 +164,11 @@
                             <h4 class="card-title">오늘 일정</h4>
                         </div>
                         <div class="card-body">
-                            {{#plans2}}
+                            {{#today}}
                             <div class="alert alert-info">
-                                <span>{{content}} - {{place}}</span>
+                                <span>{{place}} - {{content}}</span>
                             </div>
-                            {{/plans2}}
+                            {{/today}}
                         </div>
                     </div>
                 </div>
@@ -178,36 +178,14 @@
                             <h4 class="card-title">다가오는 일정</h4>
                         </div>
                         <div class="card-body">
+                            {{#next}}
                             <div class="alert alert-primary">
                                 <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
                                     <i class="tim-icons icon-simple-remove"></i>
                                 </button>
-                                <span><b> Primary - </b> This is a regular notification made with ".alert-primary"</span>
+                                <span><b> ({{month}}/{{date}}) </b> {{place}} - {{content}}</span>
                             </div>
-                            <div class="alert alert-info">
-                                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                                    <i class="tim-icons icon-simple-remove"></i>
-                                </button>
-                                <span><b> Info - </b> This is a regular notification made with ".alert-info"</span>
-                            </div>
-                            <div class="alert alert-success">
-                                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                                    <i class="tim-icons icon-simple-remove"></i>
-                                </button>
-                                <span><b> Success - </b> This is a regular notification made with ".alert-success"</span>
-                            </div>
-                            <div class="alert alert-warning">
-                                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                                    <i class="tim-icons icon-simple-remove"></i>
-                                </button>
-                                <span><b> Warning - </b> This is a regular notification made with ".alert-warning"</span>
-                            </div>
-                            <div class="alert alert-danger">
-                                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                                    <i class="tim-icons icon-simple-remove"></i>
-                                </button>
-                                <span><b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
-                            </div>
+                            {{/next}}
                         </div>
                     </div>
                 </div>
@@ -223,7 +201,6 @@
 <script src='https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js'></script>
 
-<script src="/calendar/js/calendar.js"></script>
 <script src="/js/core/jquery.min.js"></script>
 <script src="/js/core/popper.min.js"></script>
 <script src="/js/core/bootstrap.min.js"></script>
@@ -238,7 +215,8 @@
 <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
 <script src="/demo/demo.js"></script>
-<script src="/app/memory.js"></script>
+<script src="/app/plans.js"></script>
+<script src="/calendar/js/calendar.js"></script>
 <script>
     $(document).ready(function() {
       $().ready(function() {
