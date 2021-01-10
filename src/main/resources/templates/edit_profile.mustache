@@ -76,6 +76,7 @@
         {{>layout/navbar}}
 
         <div class="content">
+            <form action="/edit_profile" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6">
                     <div class="card">
@@ -83,18 +84,17 @@
                             <h5 class="title">프로필1</h5>
                         </div>
                         <div class="card-body">
-                            <form>
                                 <div class="row">
                                     <div class="col-md-6 pr-md-1">
                                         <div class="form-group">
                                             <label>이름</label>
-                                            <input type="text" class="form-control" placeholder="이름" id="user1_name">
+                                            <input type="text" class="form-control" placeholder="이름" id="user1_name" name="user1_name">
                                         </div>
                                     </div>
                                     <div class="col-md-6 pl-md-1">
                                         <div class="form-group">
                                             <label>직업&소속</label>
-                                            <input type="text" class="form-control" placeholder="직업&소속" id="user1_job">
+                                            <input type="text" class="form-control" placeholder="직업&소속" id="user1_job" name="user1_job">
                                         </div>
                                     </div>
                                 </div>
@@ -102,19 +102,19 @@
                                     <div class="col-md-4 pr-md-1">
                                         <div class="form-group">
                                             <label>생일</label>
-                                            <input type="text" class="form-control" placeholder="년" id="user1_year">
+                                            <input type="text" class="form-control" placeholder="년" id="user1_year" name="user1_year">
                                         </div>
                                     </div>
                                     <div class="col-md-4 pl-md-1">
                                         <div class="form-group">
                                             <label></label>
-                                            <input type="text" class="form-control" placeholder="월" id="user1_month">
+                                            <input type="text" class="form-control" placeholder="월" id="user1_month" name="user1_month">
                                         </div>
                                     </div>
                                     <div class="col-md-4 pl-md-1">
                                         <div class="form-group">
                                             <label></label>
-                                            <input type="text" class="form-control" placeholder="일" id="user1_date">
+                                            <input type="text" class="form-control" placeholder="일" id="user1_date" name="user1_date">
                                         </div>
                                     </div>
                                 </div>
@@ -122,7 +122,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>주소</label>
-                                            <input type="text" class="form-control" placeholder="주소" id="user1_address">
+                                            <input type="text" class="form-control" placeholder="주소" id="user1_address" name="user1_address">
                                         </div>
                                     </div>
                                 </div>
@@ -130,7 +130,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>인스타그램</label>
-                                            <input type="text" class="form-control" placeholder="인스타그램 아이디" id="user1_instagram">
+                                            <input type="text" class="form-control" placeholder="인스타그램 아이디" id="user1_instagram" name="user1_instagram">
                                         </div>
                                     </div>
                                 </div>
@@ -138,7 +138,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>페이스북</label>
-                                            <input type="text" class="form-control" placeholder="페이스북 아이디" id="user1_facebook">
+                                            <input type="text" class="form-control" placeholder="페이스북 아이디" id="user1_facebook" name="user1_facebook">
                                         </div>
                                     </div>
                                 </div>
@@ -146,7 +146,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">이메일</label>
-                                            <input type="email" class="form-control" placeholder="user@email.com" id="user1_email">
+                                            <input type="email" class="form-control" placeholder="user@email.com" id="user1_email" name="user1_email">
                                         </div>
                                     </div>
                                 </div>
@@ -154,11 +154,10 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>소개</label>
-                                            <textarea rows="4" cols="80" class="form-control" placeholder="자신의 소개" id="user1_about"></textarea>
+                                            <textarea rows="4" cols="80" class="form-control" placeholder="자신의 소개" id="user1_about" name="user1_about"></textarea>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
                         </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-fill btn-primary" id="btn_profile_save">저장</button>
@@ -172,18 +171,17 @@
                             <h5 class="title">프로필2</h5>
                         </div>
                         <div class="card-body">
-                            <form>
                                 <div class="row">
                                     <div class="col-md-6 pr-md-1">
                                         <div class="form-group">
                                             <label>이름</label>
-                                            <input type="text" class="form-control" placeholder="이름" id="user2_name">
+                                            <input type="text" class="form-control" placeholder="이름" id="user2_name" name="user2_name">
                                         </div>
                                     </div>
                                     <div class="col-md-6 pl-md-1">
                                         <div class="form-group">
                                             <label>직업&소속</label>
-                                            <input type="text" class="form-control" placeholder="직업&소속" id="user2_job">
+                                            <input type="text" class="form-control" placeholder="직업&소속" id="user2_job" name="user2_job">
                                         </div>
                                     </div>
                                 </div>
@@ -191,19 +189,19 @@
                                     <div class="col-md-4 pr-md-1">
                                         <div class="form-group">
                                             <label>생일</label>
-                                            <input type="text" class="form-control" placeholder="년" id="user2_year">
+                                            <input type="text" class="form-control" placeholder="년" id="user2_year" name="user2_year">
                                         </div>
                                     </div>
                                     <div class="col-md-4 pl-md-1">
                                         <div class="form-group">
                                             <label></label>
-                                            <input type="text" class="form-control" placeholder="월" id="user2_month">
+                                            <input type="text" class="form-control" placeholder="월" id="user2_month" name="user2_month">
                                         </div>
                                     </div>
                                     <div class="col-md-4 pl-md-1">
                                         <div class="form-group">
                                             <label></label>
-                                            <input type="text" class="form-control" placeholder="일" id="user2_date">
+                                            <input type="text" class="form-control" placeholder="일" id="user2_date" name="user2_date">
                                         </div>
                                     </div>
                                 </div>
@@ -211,7 +209,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>주소</label>
-                                            <input type="text" class="form-control" placeholder="주소" id="user2_address">
+                                            <input type="text" class="form-control" placeholder="주소" id="user2_address" name="user2_address">
                                         </div>
                                     </div>
                                 </div>
@@ -219,7 +217,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>인스타그램</label>
-                                            <input type="text" class="form-control" placeholder="인스타그램 아이디" id="user2_instagram">
+                                            <input type="text" class="form-control" placeholder="인스타그램 아이디" id="user2_instagram" name="user2_instagram">
                                         </div>
                                     </div>
                                 </div>
@@ -227,7 +225,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>페이스북</label>
-                                            <input type="text" class="form-control" placeholder="페이스북 아이디" id="user2_facebook">
+                                            <input type="text" class="form-control" placeholder="페이스북 아이디" id="user2_facebook" name="user2_facebook">
                                         </div>
                                     </div>
                                 </div>
@@ -235,7 +233,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">이메일</label>
-                                            <input type="email" class="form-control" placeholder="user@email.com" id="user2_email">
+                                            <input type="email" class="form-control" placeholder="user@email.com" id="user2_email" name="user2_email">
                                         </div>
                                     </div>
                                 </div>
@@ -243,22 +241,174 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>소개</label>
-                                            <textarea rows="4" cols="80" class="form-control" placeholder="자신의 소개" id="user2_about"></textarea>
+                                            <textarea rows="4" cols="80" class="form-control" placeholder="자신의 소개" id="user2_about" name="user2_about"></textarea>
                                         </div>
                                     </div>
                                 </div>
-                            </form>
                         </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-fill btn-primary">저장</button>
+                            <button type="button" class="btn btn-fill btn-primary">
+                                <input type="file" name="file" accept="image/*" onchange="setThumbnail(event);"/>
+                            </button>
+                            <div id="image_container"></div>
                         </div>
                     </div>
                 </div>
             </div>
+            </form>
         </div>
     </div>
     {{>layout/footnav}}
 </div>
 </div>
 {{>layout/dropdown}}
-{{>layout/footer}}
+<!--   Core JS Files   -->
+<script src="/js/core/jquery.min.js"></script>
+<script src="/js/core/popper.min.js"></script>
+<script src="/js/core/bootstrap.min.js"></script>
+<script src="/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<!--  Google Maps Plugin    -->
+<!-- Place this tag in your head or just before your close body tag. -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Chart JS -->
+<script src="/js/plugins/chartjs.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
+<script src="/demo/demo.js"></script>
+<script src="/app/memory.js"></script>
+<script src="/app/couple_profile.js"></script>
+<script>
+    $(document).ready(function() {
+      $().ready(function() {
+        $sidebar = $('.sidebar');
+        $navbar = $('.navbar');
+        $main_panel = $('.main-panel');
+
+        $full_page = $('.full-page');
+
+        $sidebar_responsive = $('body > .navbar-collapse');
+        sidebar_mini_active = true;
+        white_color = false;
+
+        window_width = $(window).width();
+
+        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+
+
+        $('.fixed-plugin a').click(function(event) {
+          if ($(this).hasClass('switch-trigger')) {
+            if (event.stopPropagation) {
+              event.stopPropagation();
+            } else if (window.event) {
+              window.event.cancelBubble = true;
+            }
+          }
+        });
+
+        $('.fixed-plugin .background-color span').click(function() {
+          $(this).siblings().removeClass('active');
+          $(this).addClass('active');
+
+          var new_color = $(this).data('color');
+
+          if ($sidebar.length != 0) {
+            $sidebar.attr('data', new_color);
+          }
+
+          if ($main_panel.length != 0) {
+            $main_panel.attr('data', new_color);
+          }
+
+          if ($full_page.length != 0) {
+            $full_page.attr('filter-color', new_color);
+          }
+
+          if ($sidebar_responsive.length != 0) {
+            $sidebar_responsive.attr('data', new_color);
+          }
+        });
+
+        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
+          var $btn = $(this);
+
+          if (sidebar_mini_active == true) {
+            $('body').removeClass('sidebar-mini');
+            sidebar_mini_active = false;
+            blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
+          } else {
+            $('body').addClass('sidebar-mini');
+            sidebar_mini_active = true;
+            blackDashboard.showSidebarMessage('Sidebar mini activated...');
+          }
+
+          // we simulate the window Resize so the charts will get updated in realtime.
+          var simulateWindowResize = setInterval(function() {
+            window.dispatchEvent(new Event('resize'));
+          }, 180);
+
+          // we stop the simulation of Window Resize after the animations are completed
+          setTimeout(function() {
+            clearInterval(simulateWindowResize);
+          }, 1000);
+        });
+
+        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
+          var $btn = $(this);
+
+          if (white_color == true) {
+
+            $('body').addClass('change-background');
+            setTimeout(function() {
+              $('body').removeClass('change-background');
+              $('body').removeClass('white-content');
+            }, 900);
+            white_color = false;
+          } else {
+
+            $('body').addClass('change-background');
+            setTimeout(function() {
+              $('body').removeClass('change-background');
+              $('body').addClass('white-content');
+            }, 900);
+
+            white_color = true;
+          }
+
+
+        });
+
+        $('.light-badge').click(function() {
+          $('body').addClass('white-content');
+        });
+
+        $('.dark-badge').click(function() {
+          $('body').removeClass('white-content');
+        });
+      });
+    });
+  </script>
+<script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+<script>
+    window.TrackJS &&
+      TrackJS.install({
+        token: "ee6fab19c5a04ac1a32a645abde4613a",
+        application: "black-dashboard-free"
+      });
+</script>
+<script>
+    function setThumbnail(event) {
+        var reader = new FileReader();
+        reader.onload = function(event) {
+            var img = document.createElement("img");
+            img.setAttribute("src", event.target.result);
+            document.querySelector("div#image_container").appendChild(img);
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+</body>
+</html>

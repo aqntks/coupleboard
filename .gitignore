@@ -1,5 +1,4 @@
 # Project exclude paths
 .gradle
 .idea
-src/main/resources/application.yml
-
+src/main/resources/aws.yml
