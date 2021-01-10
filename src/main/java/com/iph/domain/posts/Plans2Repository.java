@@ -9,8 +9,15 @@ public interface Plans2Repository extends JpaRepository<Plans2, Long>{
 
     @Query("SELECT p FROM Plans2 p ORDER BY p.id DESC")
     List<Plans2> findAllDesc();
-
-    @Query(value = "SELECT * FROM plans2 p WHERE p.year = DATE_FORMAT(curdate() , '%Y') " +
-            "AND p.month = DATE_FORMAT(curdate() , '%c') AND p.date = DATE_FORMAT(curdate() , '%d')", nativeQuery = true)
+    
+    //오늘 일정
+    @Query("SELECT p FROM Plans2 p WHERE p.save_date = CURRENT_DATE()")
     List<Plans2> findTodayPlan();
+
+    //다가오는 일정(+10일)
+    @Query("SELECT p FROM Plans2 p WHERE p.save_date BETWEEN CURRENT_DATE() AND CURRENT_DATE()+10 ORDER BY save_date")
+    List<Plans2> findNextPlan();
+
 }
+
+

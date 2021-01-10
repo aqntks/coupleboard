@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 
 @Getter
@@ -17,14 +18,17 @@ public class Plans2 extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
-    private String year;
+    @Column(nullable = false)
+    private Integer year;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
-    private String month;
+    @Column(nullable = false)
+    private Integer month;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
-    private String date;
+    @Column(nullable = false)
+    private Integer date;
+
+    @Column
+    private LocalDate save_date;
 
     @Column(columnDefinition = "TEXT")
     private String place;
@@ -33,19 +37,21 @@ public class Plans2 extends BaseTimeEntity {
     private String content;
 
     @Builder
-    public Plans2(String year, String month, String date, String place, String content){
+    public Plans2(Integer year, Integer month, Integer date, String place, String content){
         this.year = year;
         this.month = month;
         this.date = date;
         this.place = place;
         this.content = content;
+        this.save_date = LocalDate.of(year, month, date);
     }
 
-    public void update(String year, String month,String date, String place, String content){
+    public void update(Integer year, Integer month, Integer date, String place, String content){
         this.year = year;
         this.month = month;
         this.date = date;
         this.place = place;
         this.content = content;
+        this.save_date = LocalDate.of(year, month, date);
     }
 }

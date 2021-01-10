@@ -59,4 +59,11 @@ public class Plans2Service {
                 .map(Plans2ListResponseDto::new)
                 .collect(Collectors.toList());
     }
+
+    @Transactional(readOnly = true)
+    public List<Plans2ListResponseDto> findNextPlan() {
+        return plans2Repository.findNextPlan().stream()
+                .map(Plans2ListResponseDto::new)
+                .collect(Collectors.toList());
+    }
 }
