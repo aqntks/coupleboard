@@ -75,6 +75,41 @@ public class BoardController {
         return "memories-save";
     }
 
+    @GetMapping("/add_profile_select")
+    public String add_profile_select(Model model) {
+        return "add_profile_select";
+    }
+
+    @GetMapping("/add_profile_one")
+    public String add_profile_one(Model model) {
+        return "add_profile_one";
+    }
+
+    @PostMapping("/add_profile_one") //프로필 등록 post
+    public String add_profile_one_post(CoupleProfileSaveRequestDto coupleProfileSaveRequestDto, MultipartFile file) throws IOException {
+        String imgPath = s3Service.upload(file);
+        coupleProfileSaveRequestDto.setUser1_img_path(imgPath);
+
+        coupleProfileService.save(coupleProfileSaveRequestDto);
+
+        return "redirect:add_profile_select";
+    }
+
+    @GetMapping("/add_profile_two")
+    public String add_profile_two(Model model) {
+        return "add_profile_two";
+    }
+
+    @PostMapping("/add_profile_two") //프로필 등록 post
+    public String add_profile_two_post(CoupleProfileSaveRequestDto coupleProfileSaveRequestDto, MultipartFile file) throws IOException {
+        String imgPath = s3Service.upload(file);
+        coupleProfileSaveRequestDto.setUser2_img_path(imgPath);
+
+        coupleProfileService.save(coupleProfileSaveRequestDto);
+
+        return "redirect:add_profile_select";
+    }
+
     @GetMapping("/edit_profile")
     public String edit_profile(Model model) {
         return "edit_profile";
@@ -89,5 +124,4 @@ public class BoardController {
 
         return "redirect:";
     }
-
 }

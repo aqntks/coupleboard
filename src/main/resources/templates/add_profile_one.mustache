@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="/img/favicon.png">
-    <title>
-        CoupleBoard
-    </title>
-    <!--     Fonts and icons     -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-    <!-- Nucleo Icons -->
-    <link href="/css/nucleo-icons.css" rel="stylesheet" />
-    <!-- CSS Files -->
-    <link href="/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="/demo/demo.css" rel="stylesheet" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:300,400,700'>
-    <link rel="stylesheet" href="/calendar/css/style.css">
-</head>
-<body class="">
-
+{{>layout/header}}
 <div class="wrapper">
     <div class="sidebar">
         <!--
@@ -40,7 +14,7 @@
                 </a>
             </div>
             <ul class="nav">
-                <li class="active ">
+                <li>
                     <a href="plan">
                         <i class="tim-icons icon-chart-pie-36"></i>
                         <p>계획보드</p>
@@ -64,7 +38,7 @@
                         <p>Notifications</p>
                     </a>
                 </li>
-                <li>
+                <li class="active ">
                     <a href="../add_profile_select">
                         <i class="tim-icons icon-single-02"></i>
                         <p>커플 등록</p>
@@ -102,105 +76,131 @@
         {{>layout/navbar}}
 
         <div class="content">
+            <form action="/add_profile_one" method="post" enctype="multipart/form-data">
             <div class="row">
-                <div class="col-md-4">
-                        <div id="calendar"></div>
-                </div>
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="title">계획 등록</h5>
+                            <h5 class="title">프로필1</h5>
                         </div>
                         <div class="card-body">
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-4 pr-md-1">
-                                        <div class="form-group">
-                                            <label>년</label>
-                                            <input type="text" class="form-control" placeholder="Year" id="year">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 pl-md-1">
-                                        <div class="form-group">
-                                            <label>월</label>
-                                            <input type="text" class="form-control" placeholder="Month" id="month">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 pl-md-1">
-                                        <div class="form-group">
-                                            <label>일</label>
-                                            <input type="text" class="form-control" placeholder="Date" id="date">
-                                        </div>
+                            <div class="row">
+                                <div class="col-md-6 pr-md-1">
+                                    <div class="form-group">
+                                        <label>이름</label>
+                                        <input type="text" class="form-control" placeholder="이름" id="user1_name" name="user1_name">
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>장소</label>
-                                            <input type="text" class="form-control" placeholder="Place" id="place">
-                                        </div>
+                                <div class="col-md-6 pl-md-1">
+                                    <div class="form-group">
+                                        <label>직업&소속</label>
+                                        <input type="text" class="form-control" placeholder="직업&소속" id="user1_job" name="user1_job">
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <div class="form-group">
-                                            <label>일정</label>
-                                            <textarea rows="4" cols="80" class="form-control" placeholder="Content" id="content"></textarea>
-                                        </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 pr-md-1">
+                                    <div class="form-group">
+                                        <label>생일</label>
+                                        <input type="text" class="form-control" placeholder="년" id="user1_year" name="user1_year">
                                     </div>
                                 </div>
-                            </form>
+                                <div class="col-md-4 pl-md-1">
+                                    <div class="form-group">
+                                        <label></label>
+                                        <input type="text" class="form-control" placeholder="월" id="user1_month" name="user1_month">
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pl-md-1">
+                                    <div class="form-group">
+                                        <label></label>
+                                        <input type="text" class="form-control" placeholder="일" id="user1_date" name="user1_date">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>주소</label>
+                                        <input type="text" class="form-control" placeholder="주소" id="user1_address" name="user1_address">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>인스타그램</label>
+                                        <input type="text" class="form-control" placeholder="인스타그램 아이디" id="user1_instagram" name="user1_instagram">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>페이스북</label>
+                                        <input type="text" class="form-control" placeholder="페이스북 아이디" id="user1_facebook" name="user1_facebook">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">이메일</label>
+                                        <input type="email" class="form-control" placeholder="user@email.com" id="user1_email" name="user1_email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>소개</label>
+                                        <textarea rows="4" cols="80" class="form-control" placeholder="자신의 소개" id="user1_about" name="user1_about"></textarea>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-fill btn-primary" id="btn-plan-save">Add</button>
+                            <button type="submit" class="btn btn-fill btn-primary">저장</button>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">오늘 일정</h4>
-                        </div>
+                <div class="col-md-4">
+                    <div class="card card-user">
                         <div class="card-body">
-                            {{#today}}
-                            <div class="alert alert-info">
-                                <span>{{place}} - {{content}}</span>
-                            </div>
-                            {{/today}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">다가오는 일정</h4>
-                        </div>
-                        <div class="card-body">
-                            {{#next}}
-                            <div class="alert alert-primary">
-                                <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                                    <i class="tim-icons icon-simple-remove"></i>
-                                </button>
-                                <span><b> ({{month}}/{{date}}) </b> {{place}} - {{content}}</span>
-                            </div>
-                            {{/next}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                            <p class="card-text">
+                                <div class="author">
+                                    <div class="block block-one"></div>
+                                    <div class="block block-two"></div>
+                                    <div class="block block-three"></div>
+                                    <div class="block block-four"></div>
+                                        <img class="avatar" src="/img/emilyz.jpg" alt="...">
+                                        <h5 class="title">사진 등록</h5>
 
-        {{>layout/footnav}}
+                            <p class="description">
+                                본인의 사진을 등록해 주세요
+                            </p>
+                            <div id="image_container"></div>
+                        </div>
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="button-container">
+                            <button type="button" class="btn btn-fill btn-primary">
+                                <input type="file" name="file" accept="image/*" onchange="setThumbnail(event);"/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
     </div>
+
+    {{>layout/footnav}}
+</div>
 </div>
 {{>layout/dropdown}}
 <!--   Core JS Files   -->
-<script src='https://npmcdn.com/react@15.3.0/dist/react.min.js'></script>
-<script src='https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js'></script>
-
 <script src="/js/core/jquery.min.js"></script>
 <script src="/js/core/popper.min.js"></script>
 <script src="/js/core/bootstrap.min.js"></script>
@@ -215,8 +215,8 @@
 <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
 <script src="/demo/demo.js"></script>
-<script src="/app/plans.js"></script>
-<script src="/calendar/js/calendar.js"></script>
+<script src="/app/memory.js"></script>
+<script src="/app/couple_profile.js"></script>
 <script>
     $(document).ready(function() {
       $().ready(function() {
@@ -335,6 +335,17 @@
         token: "ee6fab19c5a04ac1a32a645abde4613a",
         application: "black-dashboard-free"
       });
-  </script>
+</script>
+<script>
+    function setThumbnail(event) {
+        var reader = new FileReader();
+        reader.onload = function(event) {
+            var img = document.createElement("img");
+            img.setAttribute("src", event.target.result);
+            document.querySelector("div#image_container").appendChild(img);
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
 </body>
 </html>

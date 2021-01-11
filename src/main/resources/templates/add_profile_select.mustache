@@ -20,7 +20,7 @@
                         <p>계획보드</p>
                     </a>
                 </li>
-                <li class="active ">
+                <li>
                     <a href="memory">
                         <i class="tim-icons icon-badge"></i>
                         <p>추억보드</p>
@@ -38,7 +38,7 @@
                         <p>Notifications</p>
                     </a>
                 </li>
-                <li>
+                <li class="active ">
                     <a href="../add_profile_select">
                         <i class="tim-icons icon-single-02"></i>
                         <p>커플 등록</p>
@@ -78,49 +78,33 @@
         <div class="content">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card ">
+                    <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title"> Memory</h4>
+                            <h5 class="title">프로필 등록</h5>
+                            <p class="category">등록할 프로필을 선택해 주세요</p>
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table tablesorter " id="">
-                                    <thead class=" text-primary">
-                                    <tr>
-                                        <th>
-                                            날짜
-                                        </th>
-                                        <th>
-                                            장소
-                                        </th>
-                                        <th>
-                                            내용
-                                        </th>
-                                        <th class="text-center">
-                                            사진
-                                        </th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {{#memories}}
-                                        <tr>
-                                            <td>{{year}}/{{month}}/{{date}}</td>
-                                            <td>{{place}}</td>
-                                            <td>{{content}}</td>
-                                            <td>222</td>
-                                        </tr>
-                                    {{/memories}}
-                                    </tbody>
-                                </table>
+                        <div class="card-body all-icons">
+                            <div class="row">
+                                <div class="font-icon-list col-md-6 pr-md-1">
+                                    <div class="font-icon-detail">
+                                        <i class="tim-icons icon-badge"></i>
+                                        <p><button type="button" class="btn btn-fill btn-primary" onclick = "location.href = 'add_profile_one' ">커플1 프로필</button></p>
+                                    </div>
+                                </div>
+                                <div class="font-icon-list col-md-6 pl-md-1">
+                                    <div class="font-icon-detail">
+                                        <i class="tim-icons icon-badge"></i>
+                                        <p><button type="submit" class="btn btn-fill btn-primary" onclick = "location.href = 'add_profile_two' ">커플2 프로필</button></p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-fill btn-primary" onclick="location.href='add/memory'">Add</button>
                 </div>
             </div>
         </div>
 
-{{>layout/footnav}}
+        {{>layout/footnav}}
     </div>
 </div>
 {{>layout/dropdown}}
