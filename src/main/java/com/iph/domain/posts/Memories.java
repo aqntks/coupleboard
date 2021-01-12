@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 
 @Getter
@@ -18,13 +19,16 @@ public class Memories extends BaseTimeEntity {
     private Long id;
 
     @Column(columnDefinition = "TEXT", nullable = false)
-    private String year;
+    private Integer year;
 
     @Column(columnDefinition = "TEXT", nullable = false)
-    private String month;
+    private Integer month;
 
     @Column(columnDefinition = "TEXT", nullable = false)
-    private String date;
+    private Integer date;
+
+    @Column
+    private LocalDate save_date;
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String place;
@@ -32,22 +36,27 @@ public class Memories extends BaseTimeEntity {
     @Column
     private String content;
 
+    @Column
+    private String img_path;
 
     @Builder
-    public Memories(String year, String month, String date, String place, String content){
+    public Memories(Integer year, Integer month, Integer date, String place, String content, String img_path){
         this.year = year;
         this.month = month;
         this.date = date;
         this.place = place;
         this.content = content;
-
+        this.img_path = img_path;
+        this.save_date = LocalDate.of(year, month, date);
     }
 
-    public void update(String year, String month,String date, String place, String content){
+    public void update(Integer year, Integer month, Integer date, String place, String content, String img_path){
         this.year = year;
         this.month = month;
         this.date = date;
         this.place = place;
         this.content = content;
+        this.img_path = img_path;
+        this.save_date = LocalDate.of(year, month, date);
     }
 }

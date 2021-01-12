@@ -6,6 +6,7 @@ import com.iph.service.posts.CoupleProfileService;
 import com.iph.service.posts.MemoriesService;
 import com.iph.service.posts.Plans2Service;
 import com.iph.web.dto.CoupleProfileSaveRequestDto;
+import com.iph.web.dto.MemoriesSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -60,6 +61,16 @@ public class BoardController {
     public String memory(Model model) {
         model.addAttribute("memories", memoriesService.findAllDesc());
         return "memory";
+    }
+
+    @PostMapping("/memory") //프로필 등록 post
+    public String memory_post(MemoriesSaveRequestDto memoriesSaveRequestDto, MultipartFile file) throws IOException {
+        String imgPath = s3Service.upload(file);
+        memoriesSaveRequestDto.setImg_path(imgPath);
+
+        memoriesService.save(memoriesSaveRequestDto);
+
+        return "redirect:memory";
     }
 
     //추억 등록

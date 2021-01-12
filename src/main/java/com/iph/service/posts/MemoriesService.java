@@ -25,7 +25,7 @@ public class MemoriesService {
         Memories memories = memoriesRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 데이터가 없습니다. id=" + id));
 
-        memories.update(requestDto.getYear(), requestDto.getMonth(), requestDto.getDate(), requestDto.getPlace(), requestDto.getContent());
+        memories.update(requestDto.getYear(), requestDto.getMonth(), requestDto.getDate(), requestDto.getPlace(), requestDto.getContent(), requestDto.getImg_path());
 
         return id;
     }
