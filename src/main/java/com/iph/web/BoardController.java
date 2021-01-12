@@ -63,20 +63,20 @@ public class BoardController {
         return "memory";
     }
 
-    @PostMapping("/memory") //프로필 등록 post
-    public String memory_post(MemoriesSaveRequestDto memoriesSaveRequestDto, MultipartFile file) throws IOException {
+    //추억 등록
+    @GetMapping("/add/memory")
+    public String addMemory(){
+        return "add_memory";
+    }
+
+    @PostMapping("/add/memory") //프로필 등록 post
+    public String add_memory_post(MemoriesSaveRequestDto memoriesSaveRequestDto, MultipartFile file) throws IOException {
         String imgPath = s3Service.upload(file);
         memoriesSaveRequestDto.setImg_path(imgPath);
 
         memoriesService.save(memoriesSaveRequestDto);
 
         return "redirect:memory";
-    }
-
-    //추억 등록
-    @GetMapping("/add/memory")
-    public String addMemory(){
-        return "add_memory";
     }
 
     @GetMapping("/memories/save")
