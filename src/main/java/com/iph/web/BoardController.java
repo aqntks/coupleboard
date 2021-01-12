@@ -24,12 +24,7 @@ public class BoardController {
     private final Plans2Service plans2Service;
     private final S3Service s3Service;
 
-    @GetMapping("/calendars")
-    public String calendars(Model model) {
-        return "calendars";
-    }
-
-
+    //홈
     @GetMapping("/")
     public String home(Model model) {
         if(coupleProfileService.existsById(1L)) {  // 프로필 존재 여부
@@ -52,6 +47,7 @@ public class BoardController {
         return "home";
     }
 
+    //계획 보드
     @GetMapping("/plan")
     public String plan(Model model) {
         model.addAttribute("today", plans2Service.findTodayPlan());
@@ -59,12 +55,14 @@ public class BoardController {
         return "plan";
     }
 
+    //추억 보드
     @GetMapping("/memory")
     public String memory(Model model) {
         model.addAttribute("memories", memoriesService.findAllDesc());
         return "memory";
     }
 
+    //추억 등록
     @GetMapping("/add/memory")
     public String addMemory(){
         return "add_memory";
@@ -73,6 +71,16 @@ public class BoardController {
     @GetMapping("/memories/save")
     public String memoriesSave(){
         return "memories-save";
+    }
+
+    @GetMapping("/add_couple")
+    public String add_couple(Model model){
+        return "add_couple";
+    }
+
+    @GetMapping("/add_couple_new")
+    public String add_couple_new(Model model){
+        return "add_couple_new";
     }
 
     @GetMapping("/add_profile_select")

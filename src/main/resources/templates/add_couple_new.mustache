@@ -1,0 +1,148 @@
+{{>layout/header}}
+<div class="wrapper">
+    <div class="sidebar">
+        <!--
+          Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
+      -->
+        <div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="javascript:void(0)" class="simple-text logo-mini">
+                    IPH
+                </a>
+                <a href="/" class="simple-text logo-normal">
+                    HOME
+                </a>
+            </div>
+            <ul class="nav">
+                <li>
+                    <a href="plan">
+                        <i class="tim-icons icon-chart-pie-36"></i>
+                        <p>계획보드</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="memory">
+                        <i class="tim-icons icon-badge"></i>
+                        <p>추억보드</p>
+                    </a>
+                </li>
+                <li class="active ">
+                    <a href="../add_couple">
+                        <i class="tim-icons icon-single-02"></i>
+                        <p>커플 등록</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-panel">
+
+        {{>layout/navbar}}
+
+        <div class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                        </div>
+                        <div class="card-body all-icons">
+                            <div class="row">
+                                <div class="font-icon-list col-md-4 pr-md-1">
+                                    <div class="font-icon-detail">
+                                        <i class="tim-icons icon-badge"></i>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="title">커플</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-12 pl-md-1">
+                                                        <div class="form-group">
+                                                            <label>이름</label>
+                                                            <input type="text" class="form-control" placeholder="Name" id="name1">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="font-icon-list col-md-4">
+                                    <div class="font-icon-detail">
+                                        <i class="tim-icons icon-heart-2"></i>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="title">처음 만난 날</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-4 pr-md-1">
+                                                        <div class="form-group">
+                                                            <label>년</label>
+                                                            <input type="text" class="form-control" placeholder="Year" id="year">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label>월</label>
+                                                            <input type="text" class="form-control" placeholder="Month" id="month">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 pl-md-1">
+                                                        <div class="form-group">
+                                                            <label>일</label>
+                                                            <input type="text" class="form-control" placeholder="Date" id="date">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="font-icon-list col-md-4 pl-md-1">
+                                    <div class="font-icon-detail">
+                                        <i class="tim-icons icon-badge"></i>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5 class="title">커플</h5>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-12 pl-md-1">
+                                                        <div class="form-group">
+                                                            <label>이름</label>
+                                                            <input type="text" class="form-control" placeholder="Name" id="name2">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-md-5">
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                    <p><button type="button" class="btn btn-fill btn-primary" onclick = "location.href = 'add_profile_select' ">커플 등록하기</button></p>
+                                        </div>
+                                    </div>
+                                 </div>
+                                <div class="col-md-5">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{>layout/footnav}}
+    </div>
+</div>
+{{>layout/dropdown}}
+{{>layout/footer}}
