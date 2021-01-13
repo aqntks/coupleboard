@@ -64,12 +64,12 @@ public class BoardController {
     }
 
     //추억 등록
-    @GetMapping("/add/memory")
+    @GetMapping("/add_memory")
     public String addMemory(){
         return "add_memory";
     }
 
-    @PostMapping("/add/memory") //프로필 등록 post
+    @PostMapping("/add_memory") //프로필 등록 post
     public String add_memory_post(MemoriesSaveRequestDto memoriesSaveRequestDto, MultipartFile file) throws IOException {
         String imgPath = s3Service.upload(file);
         memoriesSaveRequestDto.setImg_path(imgPath);
