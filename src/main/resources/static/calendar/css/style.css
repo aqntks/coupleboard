@@ -1,16 +1,6 @@
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f8f7fa;
-  color: #333;
-}
-
 .calendar {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -225px;
-  margin-left: -195px;
-  width: 360px;
+  font-family: 'Roboto', sans-serif;
+
   padding: 15px;
   box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.4);
   border-radius: 12px;
@@ -19,8 +9,17 @@ body {
 .calendar--nav {
   margin: -15px -15px 15px;
   padding: 0 15px;
-  background-color: #b670f4;
-  color: #fff;
+  background: #e14eca;
+  background-image: -webkit-linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
+  background-image: -o-linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
+  background-image: -moz-linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
+  background-image: linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
+  background-size: 210% 210%;
+  background-position: top right;
+  background-color: #e14eca;
+  transition: all 0.15s ease;
+  box-shadow: none;
+  color: #ffffff;
   height: 70px;
   position: relative;
 }
@@ -86,7 +85,7 @@ body {
 .calendar--days span.label {
   text-transform: uppercase;
   font-weight: 700;
-  color: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
   font-size: 14px;
   cursor: initial;
 }
@@ -102,8 +101,18 @@ body {
   border-radius: 0;
 }
 .calendar--days span.start, .calendar--days span.between, .calendar--days span.end {
-  background-color: #b670f4;
-  color: #fff;
+  background: #e14eca;
+  background-image: -webkit-linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
+  background-image: -o-linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
+  background-image: -moz-linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
+  background-image: linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
+  background-size: 210% 210%;
+  background-position: top right;
+  background-color: #e14eca;
+  transition: all 0.15s ease;
+  box-shadow: none;
+  color: #ffffff;
+
 }
 .calendar--days span.start {
   border-radius: 12px 0 0 12px;
