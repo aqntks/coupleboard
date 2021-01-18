@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface MemoriesRepository extends JpaRepository<Memories, Long>{
 
-    @Query("SELECT m FROM Memories m ORDER BY m.id DESC")
+    @Query("SELECT m FROM Memories m ORDER BY m.save_date DESC")
     List<Memories> findAllDesc();
 }
