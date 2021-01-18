@@ -1,4 +1,32 @@
-{{>layout/header}}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+    <title>
+        CoupleBoard
+    </title>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
+
+    <!-- Nucleo Icons -->
+    <link href="/css/nucleo-icons.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link href="/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="/demo/demo.css" rel="stylesheet" />
+    <style>
+        #file { display:none; }
+    </style>
+</head>
+<body class="">
 <div class="wrapper">
     <div class="sidebar">
         <!--
@@ -71,7 +99,11 @@
                                             <td>{{year}}/{{month}}/{{date}}</td>
                                             <td>{{place}}</td>
                                             <td>{{content}}</td>
-                                            <td><img style="width: 160px; height: 160px; float: right; object-fit: contain;" src="{{img_path}}" onclick="imgPop(this.src)"></td>
+                                            <td>
+                                                <a href="{{img_path}}" data-toggle="lightbox" class="col-sm-4">
+                                                    <img style="width: 160px; height: 160px; float: right; object-fit: contain;" src="{{img_path}}">
+                                                </a>
+                                            </td>
 
                                         </tr>
                                     {{/memories}}
@@ -101,6 +133,12 @@
 <script src="/js/plugins/chartjs.min.js"></script>
 <!--  Notifications Plugin    -->
 <script src="/js/plugins/bootstrap-notify.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+
 <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
 <script src="/demo/demo.js"></script>
@@ -225,5 +263,11 @@
         application: "black-dashboard-free"
       });
   </script>
+<script>
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+});
+</script>
 </body>
 </html>
