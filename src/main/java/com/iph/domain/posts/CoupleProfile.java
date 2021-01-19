@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 
 @Getter
@@ -26,13 +27,13 @@ public class CoupleProfile extends BaseTimeEntity {
     private String user1_job;
 
     @Column(columnDefinition = "TEXT")
-    private String user1_year;
+    private Integer user1_year;
 
     @Column(columnDefinition = "TEXT")
-    private String user1_month;
+    private Integer user1_month;
 
     @Column(columnDefinition = "TEXT")
-    private String user1_date;
+    private Integer user1_date;
 
     @Column(columnDefinition = "TEXT")
     private String user1_address;
@@ -59,13 +60,13 @@ public class CoupleProfile extends BaseTimeEntity {
     private String user2_job;
 
     @Column(columnDefinition = "TEXT")
-    private String user2_year;
+    private Integer user2_year;
 
     @Column(columnDefinition = "TEXT")
-    private String user2_month;
+    private Integer user2_month;
 
     @Column(columnDefinition = "TEXT")
-    private String user2_date;
+    private Integer user2_date;
 
     @Column(columnDefinition = "TEXT")
     private String user2_address;
@@ -85,13 +86,25 @@ public class CoupleProfile extends BaseTimeEntity {
     @Column
     private String user2_about;
 
+    @Column(columnDefinition = "TEXT")
+    private Integer start_year;
+
+    @Column(columnDefinition = "TEXT")
+    private Integer start_month;
+
+    @Column(columnDefinition = "TEXT")
+    private Integer start_date;
+
+    @Column
+    private LocalDate start_day;
+
     @Builder
-    public CoupleProfile(String user1_name, String user1_job, String user1_year, String user1_month, String user1_date,
+    public CoupleProfile(String user1_name, String user1_job, Integer user1_year, Integer user1_month, Integer user1_date,
                          String user1_address, String user1_instagram, String user1_facebook, String user1_email,
                          String user1_img_path, String user1_about, String user2_name, String user2_job,
-                         String user2_year, String user2_month, String user2_date,
+                         Integer user2_year, Integer user2_month, Integer user2_date,
                          String user2_address, String user2_instagram, String user2_facebook, String user2_email,
-                         String user2_img_path, String user2_about){
+                         String user2_img_path, String user2_about, Integer start_year, Integer start_month, Integer start_date){
         this.user1_name = user1_name;
         this.user1_job = user1_job;
         this.user1_year = user1_year;
@@ -114,15 +127,19 @@ public class CoupleProfile extends BaseTimeEntity {
         this.user2_email = user2_email;
         this.user2_img_path = user2_img_path;
         this.user2_about = user2_about;
+        this.start_year = start_year;
+        this.start_month = start_month;
+        this.start_date = start_date;
+        this.start_day = LocalDate.of(start_year, start_month, start_date);
 
     }
 
-    public void update(String user1_name, String user1_job, String user1_year, String user1_month, String user1_date,
+    public void update(String user1_name, String user1_job, Integer user1_year, Integer user1_month, Integer user1_date,
                        String user1_address, String user1_instagram, String user1_facebook, String user1_email,
                        String user1_img_path, String user1_about, String user2_name, String user2_job,
-                       String user2_year, String user2_month, String user2_date,
+                       Integer user2_year, Integer user2_month, Integer user2_date,
                        String user2_address, String user2_instagram, String user2_facebook, String user2_email,
-                       String user2_img_path, String user2_about){
+                       String user2_img_path, String user2_about, Integer start_year, Integer start_month, Integer start_date){
         this.user1_name = user1_name;
         this.user1_job = user1_job;
         this.user1_year = user1_year;
@@ -145,5 +162,9 @@ public class CoupleProfile extends BaseTimeEntity {
         this.user2_email = user2_email;
         this.user2_img_path = user2_img_path;
         this.user2_about = user2_about;
+        this.start_year = start_year;
+        this.start_month = start_month;
+        this.start_date = start_date;
+        this.start_day = LocalDate.of(start_year, start_month, start_date);
     }
 }

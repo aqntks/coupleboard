@@ -4,15 +4,17 @@ import com.iph.domain.posts.CoupleProfile;
 import com.iph.domain.posts.Memories;
 import lombok.Getter;
 
+import java.time.LocalDate;
+
 @Getter
 public class CoupleProfileResponseDto {
 
     private Long id;
     private String user1_name;
     private String user1_job;
-    private String user1_year;
-    private String user1_month;
-    private String user1_date;
+    private Integer user1_year;
+    private Integer user1_month;
+    private Integer user1_date;
     private String user1_address;
     private String user1_instagram;
     private String user1_facebook;
@@ -21,15 +23,19 @@ public class CoupleProfileResponseDto {
     private String user1_about;
     private String user2_name;
     private String user2_job;
-    private String user2_year;
-    private String user2_month;
-    private String user2_date;
+    private Integer user2_year;
+    private Integer user2_month;
+    private Integer user2_date;
     private String user2_address;
     private String user2_instagram;
     private String user2_facebook;
     private String user2_email;
     private String user2_img_path;
     private String user2_about;
+    private Integer start_year;
+    private Integer start_month;
+    private Integer start_date;
+    private LocalDate start_day;
 
     public CoupleProfileResponseDto(CoupleProfile entity){
         this.id = entity.getId();
@@ -55,5 +61,9 @@ public class CoupleProfileResponseDto {
         this.user2_email = entity.getUser2_email();
         this.user2_img_path = entity.getUser2_img_path();
         this.user2_about = entity.getUser2_about();
+        this.start_year = entity.getStart_year();
+        this.start_month = entity.getStart_month();
+        this.start_date = entity.getStart_date();
+        this.start_day = entity.getStart_day();
     }
 }

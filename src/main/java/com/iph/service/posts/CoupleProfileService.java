@@ -31,7 +31,7 @@ public class CoupleProfileService {
                 requestDto.getUser1_email(), requestDto.getUser1_img_path(), requestDto.getUser1_about(), requestDto.getUser2_name(),
                 requestDto.getUser2_job(), requestDto.getUser2_year(), requestDto.getUser2_month(),
                 requestDto.getUser2_date(), requestDto.getUser2_address(), requestDto.getUser2_instagram(), requestDto.getUser2_facebook(),
-                requestDto.getUser2_email(), requestDto.getUser2_img_path(), requestDto.getUser2_about());
+                requestDto.getUser2_email(), requestDto.getUser2_img_path(), requestDto.getUser2_about(), requestDto.getStart_year(), requestDto.getStart_month(), requestDto.getStart_date());
 
         return id;
     }
