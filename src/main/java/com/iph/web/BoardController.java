@@ -48,7 +48,7 @@ public class BoardController {
         //몇 일인지 계산
         LocalDate start = coupleProfileService.findById(1L).getStart_day();
         LocalDate now = LocalDate.now();
-        model.addAttribute("count", ChronoUnit.DAYS.between(start, now));
+        model.addAttribute("count", ChronoUnit.DAYS.between(start, now) + 2);
 
         model.addAttribute("today", plans2Service.findTodayPlan());
         model.addAttribute("next", plans2Service.findNextPlan());
