@@ -40,6 +40,7 @@
         {{>layout/navbar}}
 
         <div class="content">
+            {{#coupleProfile}}
             <form action="/add_profile_two" method="post" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-8">
@@ -52,7 +53,7 @@
                                     <div class="col-md-6 pr-md-1">
                                         <div class="form-group">
                                             <label>이름</label>
-                                            <input type="text" class="form-control" placeholder="이름" id="user2_name" name="user2_name">
+                                            <input type="text" class="form-control" placeholder="이름" id="user2_name" name="user2_name" value="{{user2_name}}">
                                         </div>
                                     </div>
                                     <div class="col-md-6 pl-md-1">
@@ -156,6 +157,22 @@
                         </div>
                     </div>
                 </div>
+                <input type="hidden" id="user1_name" name="user1_name" value="{{user1_name}}">
+                <input type="hidden" id="user1_job" name="user1_job" value="{{user1_job}}">
+                <input type="hidden" id="user1_year" name="user1_year" value="{{user1_year}}">
+                <input type="hidden" id="user1_month" name="user1_month" value="{{user1_month}}">
+                <input type="hidden" id="user1_date" name="user1_date" value="{{user1_date}}">
+                <input type="hidden" id="user1_address" name="user1_address" value="{{user1_address}}">
+                <input type="hidden" id="user1_instagram" name="user1_instagram" value="{{user1_instagram}}">
+                <input type="hidden" id="user1_facebook" name="user1_facebook" value="{{user1_facebook}}">
+                <input type="hidden" id="user1_email" name="user1_email" value="{{user1_email}}">
+                <input type="hidden" id="user1_about" name="user1_about" value="{{user1_about}}">
+                <input type="hidden" id="user1_img_path" name="user1_img_path" value="{{user1_img_path}}">
+                <input type="hidden" id="user2_name" name="user2_name" value="{{user2_name}}">
+                <input type="hidden" id="start_year" name="start_year" value="{{start_year}}">
+                <input type="hidden" id="start_month" name="start_month" value="{{start_month}}">
+                <input type="hidden" id="start_date" name="start_date" value="{{start_date}}">
+                {{/coupleProfile}}
             </form>
         </div>
     </div>

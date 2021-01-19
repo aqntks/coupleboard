@@ -7,10 +7,12 @@ import com.iph.service.posts.MemoriesService;
 import com.iph.service.posts.Plans2Service;
 import com.iph.web.dto.CoupleProfileSaveRequestDto;
 import com.iph.web.dto.MemoriesSaveRequestDto;
+import com.iph.web.dto.NewProfileTempDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -94,28 +96,37 @@ public class BoardController {
         return "add_couple_new";
     }
 
-    @GetMapping("/add_profile_select")
-    public String add_profile_select(Model model) {
-        return "add_profile_select";
+    @GetMapping("/add_profile_select1")
+    public String add_profile_select1(Model model, NewProfileTempDto newProfile) {
+        model.addAttribute("newProfile", newProfile);
+        return "add_profile_select1";
+    }
+
+    @GetMapping("/add_profile_select2")
+    public String add_profile_select2(Model model, CoupleProfileSaveRequestDto coupleProfileSaveRequestDto) {
+        model.addAttribute("coupleProfile", coupleProfileSaveRequestDto);
+        return "add_profile_select2";
     }
 
     @GetMapping("/add_profile_one")
-    public String add_profile_one(Model model) {
+    public String add_profile_one(Model model, NewProfileTempDto newProfile) {
+        model.addAttribute("newProfile", newProfile);
         return "add_profile_one";
     }
 
     @PostMapping("/add_profile_one") //프로필 등록 post
-    public String add_profile_one_post(CoupleProfileSaveRequestDto coupleProfileSaveRequestDto, MultipartFile file) throws IOException {
+    public String add_profile_one_post(CoupleProfileSaveRequestDto coupleProfileSaveRequestDto, MultipartFile file, Model model) throws IOException {
         String imgPath = s3Service.upload(file);
         coupleProfileSaveRequestDto.setUser1_img_path(imgPath);
 
-        coupleProfileService.save(coupleProfileSaveRequestDto);
+        model.addAttribute("coupleProfile", coupleProfileSaveRequestDto);
 
-        return "redirect:add_profile_select";
+        return "add_profile_select2";
     }
 
     @GetMapping("/add_profile_two")
-    public String add_profile_two(Model model) {
+    public String add_profile_two(Model model, CoupleProfileSaveRequestDto coupleProfileSaveRequestDto) {
+        model.addAttribute("coupleProfile", coupleProfileSaveRequestDto);
         return "add_profile_two";
     }
 
@@ -126,7 +137,7 @@ public class BoardController {
 
         coupleProfileService.save(coupleProfileSaveRequestDto);
 
-        return "redirect:add_profile_select";
+        return "redirect:";
     }
 
     @GetMapping("/edit_profile")

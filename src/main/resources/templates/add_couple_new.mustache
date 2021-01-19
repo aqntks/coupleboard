@@ -40,6 +40,7 @@
         {{>layout/navbar}}
 
         <div class="content">
+            <form action="/add_profile_select1" method="get">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -59,7 +60,7 @@
                                                     <div class="col-md-12 pl-md-1">
                                                         <div class="form-group">
                                                             <label>이름</label>
-                                                            <input type="text" class="form-control" placeholder="Name" id="name1">
+                                                            <input type="text" class="form-control" placeholder="Name" id="user1_name" name="user1_name">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -79,19 +80,19 @@
                                                     <div class="col-md-4 pr-md-1">
                                                         <div class="form-group">
                                                             <label>년</label>
-                                                            <input type="text" class="form-control" placeholder="Year" id="year">
+                                                            <input type="text" class="form-control" placeholder="Year" id="start_year" name="start_year">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group">
                                                             <label>월</label>
-                                                            <input type="text" class="form-control" placeholder="Month" id="month">
+                                                            <input type="text" class="form-control" placeholder="Month" id="start_month" name="start_month">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4 pl-md-1">
                                                         <div class="form-group">
                                                             <label>일</label>
-                                                            <input type="text" class="form-control" placeholder="Date" id="date">
+                                                            <input type="text" class="form-control" placeholder="Date" id="start_date" name="start_date">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -111,7 +112,7 @@
                                                     <div class="col-md-12 pl-md-1">
                                                         <div class="form-group">
                                                             <label>이름</label>
-                                                            <input type="text" class="form-control" placeholder="Name" id="name2">
+                                                            <input type="text" class="form-control" placeholder="user2_name" id="user2_name" name="user2_name">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -128,7 +129,7 @@
                                 <div class="col-md-2">
                                     <div class="row">
                                         <div class="col-md-12">
-                                    <p><button type="button" class="btn btn-fill btn-primary" onclick = "location.href = 'add_profile_select' ">커플 등록하기</button></p>
+                                    <p><button type="submit" class="btn btn-fill btn-primary">커플 등록하기</button></p>
                                         </div>
                                     </div>
                                  </div>
@@ -139,6 +140,7 @@
                     </div>
                 </div>
             </div>
+            </form>
         </div>
 
         {{>layout/footnav}}
