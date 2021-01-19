@@ -62,7 +62,7 @@
                         </div>
                         </p>
                     </div>
-                    <div class="card-description">
+                    <div class="card-description des-center">
                         {{user1_about}}
                     </div>
                     <div class="card-footer">
@@ -79,6 +79,7 @@
                         </div>
                     </div>
                 </div>
+                {{/couple_profile}}
             </div>
             <!--프로필1 끝-->
             <!--사이 div 시작-->
@@ -89,7 +90,7 @@
                             <div class="font-icon-list col-md-12">
                                 <div class="font-icon-detail">
                                     <i class="tim-icons icon-heart-2"></i>
-                                    <p>일</p>
+                                    <p><h1>{{count}}일</h1></p>
                                 </div>
                             </div>
                         </div>
@@ -98,6 +99,7 @@
             </div>
             <!--사이 div 끝-->
             <!--프로필2 시작-->
+            {{#couple_profile}}
             <div class="col-md-4">
                 <div class="card card-user">
                     <div class="card-body">
@@ -117,7 +119,7 @@
                     </div>
                     </p>
                 </div>
-                <div class="card-description">
+                <div class="card-description des-center">
                     {{user2_about}}
                 </div>
                 <div class="card-footer">
@@ -134,8 +136,9 @@
                     </div>
                 </div>
             </div>
+            {{/couple_profile}}
         </div>
-                {{/couple_profile}}
+
                 </div>
         <!--프로필2 끝-->
             <div class="row">

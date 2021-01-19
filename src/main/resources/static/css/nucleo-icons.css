@@ -54,6 +54,10 @@ Created using IcoMoon - icomoon.io
   font-size: .7142em;
 }
 
+.font-icon-detail h1 {
+  color: #e44cc4 !important;
+}
+
 /*------------------------
   change icon size
 -------------------------*/

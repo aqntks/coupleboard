@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 @RequiredArgsConstructor
 @Controller
@@ -43,6 +45,10 @@ public class BoardController {
             entity.setUser2_about("");
             model.addAttribute("couple_profile", entity);
         }
+        //몇 일인지 계산
+        LocalDate start = coupleProfileService.findById(1L).getStart_day();
+        LocalDate now = LocalDate.now();
+        model.addAttribute("count", ChronoUnit.DAYS.between(start, now));
 
         model.addAttribute("today", plans2Service.findTodayPlan());
         model.addAttribute("next", plans2Service.findNextPlan());
